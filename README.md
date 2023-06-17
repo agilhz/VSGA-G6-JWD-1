@@ -9,11 +9,33 @@ Junior Web Developer merupakan salah satu Skema Pelatihan Program Vocational Sch
 
 * PHP 7.4 or higher
 * Xampp v3.3.0 or higher
+* HTML 5
+* CSS 3
+* Visual Studio Code
 
 ## Documentation
 
 1. Dokumentasi PHP terdapat di link berikut: [php.net/docs](https://php.net/docs).
 2. Dokumentasi Xampp terdapat di link berikut: [apachefriends.org/docs](https://www.apachefriends.org/docs/).
+3. Dokumentasi HTML 5 dan CSS 3 terdapat di link berikut: [w3scools.com](https://www.w3schools.com/).
+4. Dokumentasi Visual Studio Code terdapat di link berikut: [code.visualstudio.com/docs](https://code.visualstudio.com/docs).
+
+## Project List
+
+
+
+## Folder Structure
+
+📦VSGA_G6
+ ┣ 📂Hari_1
+ ┃ ┗ 📜index.php
+ ┣ 📂Hari_2
+ ┃ ┗ 📜index.php
+ ┣ 📂Hari_3
+ ┃ ┣ 📜index.php
+ ┃ ┗ 📜pilihan.php
+ ┗ 📂Hari_4
+   ┗ 📜kalkulator.php
 
 ## Credits
 
