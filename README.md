@@ -7,18 +7,20 @@ Junior Web Developer merupakan salah satu Skema Pelatihan Program Vocational Sch
 
 ## Requirements
 
-* PHP 7.4 or higher
-* Xampp v3.3.0 or higher
-* HTML 5
-* CSS 3
-* Visual Studio Code
+- PHP 7.4 or higher
+- Xampp v3.3.0 or higher
+- HTML 5
+- CSS 3
+- Visual Studio Code
 
-## Documentation
+## Documentation and Instalation
 
-1. Dokumentasi PHP terdapat di link berikut: [php.net/docs](https://php.net/docs).
-2. Dokumentasi Xampp terdapat di link berikut: [apachefriends.org/docs](https://www.apachefriends.org/docs/).
-3. Dokumentasi HTML 5 dan CSS 3 terdapat di link berikut: [w3scools.com](https://www.w3schools.com/).
-4. Dokumentasi Visual Studio Code terdapat di link berikut: [code.visualstudio.com/docs](https://code.visualstudio.com/docs).
+Dokumentasi dan cara instalasi terdapat di link yang telah disediakan:
+
+1. PHP: [php.net/docs](https://php.net/docs).
+2. Xampp: [apachefriends.org/docs](https://www.apachefriends.org/docs/).
+3. HTML 5 dan CSS 3: [w3scools.com](https://www.w3schools.com/).
+4. Visual Studio Code: [code.visualstudio.com/docs](https://code.visualstudio.com/docs).
 
 ## Project List
 
@@ -30,15 +32,15 @@ Junior Web Developer merupakan salah satu Skema Pelatihan Program Vocational Sch
 ## Folder Structure
 
 📦VSGA_G6
- ┣ 📂Hari_1
- ┃ ┗ 📜index.php
- ┣ 📂Hari_2
- ┃ ┗ 📜index.php
- ┣ 📂Hari_3
- ┃ ┣ 📜index.php
- ┃ ┗ 📜pilihan.php
- ┗ 📂Hari_4
-   ┗ 📜kalkulator.php
+┣ 📂Hari_1
+┃ ┗ 📜index.php
+┣ 📂Hari_2
+┃ ┗ 📜index.php
+┣ 📂Hari_3
+┃ ┣ 📜index.php
+┃ ┗ 📜pilihan.php
+┗ 📂Hari_4
+┗ 📜kalkulator.php
 
 ## Credits
 
