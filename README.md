@@ -12,23 +12,8 @@ Junior Web Developer merupakan salah satu Skema Pelatihan Program Vocational Sch
 
 ## Documentation
 
-1. The PHP manual is available at [php.net/docs](https://php.net/docs).
-2. The Xampp manual is available at [apachefriends.org/docs](https://www.apachefriends.org/docs/).
-
-## Installation
-
-## Directory Structure
-
-📦VSGA_G6
- ┣ 📂Hari_1
- ┃ ┗ 📜index.php
- ┣ 📂Hari_2
- ┃ ┗ 📜index.php
- ┣ 📂Hari_3
- ┃ ┣ 📜index.php
- ┃ ┗ 📜pilihan.php
- ┗ 📂Hari_4
-   ┗ 📜kalkulator.php
+1. Dokumentasi PHP terdapat di link berikut: [php.net/docs](https://php.net/docs).
+2. Dokumentasi Xampp terdapat di link berikut: [apachefriends.org/docs](https://www.apachefriends.org/docs/).
 
 ## Credits
 
