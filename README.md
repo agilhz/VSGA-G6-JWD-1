@@ -1,192 +1,141 @@
-# Dillinger
-## _The Last Markdown Editor, Ever_
+<div align="center">
+    <a href="https://php.net">
+        <img
+            alt="PHP"
+            src="https://www.php.net/images/logos/new-php-logo.svg"
+            width="150">
+    </a>
+</div>
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+# The PHP Interpreter
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+PHP is a popular general-purpose scripting language that is especially suited to
+web development. Fast, flexible and pragmatic, PHP powers everything from your
+blog to the most popular websites in the world. PHP is distributed under the
+[PHP License v3.01](LICENSE).
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
+[![Push](https://github.com/php/php-src/actions/workflows/push.yml/badge.svg)](https://github.com/php/php-src/actions/workflows/push.yml)
+[![Build status](https://travis-ci.com/php/php-src.svg?branch=master)](https://travis-ci.com/github/php/php-src)
+[![Build status](https://ci.appveyor.com/api/projects/status/meyur6fviaxgdwdy/branch/master?svg=true)](https://ci.appveyor.com/project/php/php-src)
+[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/php.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:php)
 
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
+## Documentation
 
-## Features
-
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
-
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
-
-## Tech
-
-Dillinger uses a number of open source projects to work properly:
-
-- [AngularJS] - HTML enhanced for web apps!
-- [Ace Editor] - awesome web-based text editor
-- [markdown-it] - Markdown parser done right. Fast and easy to extend.
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-to Markdown converter
-- [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
+The PHP manual is available at [php.net/docs](https://php.net/docs).
 
 ## Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+### Prebuilt packages and binaries
 
-Install the dependencies and devDependencies and start the server.
+Prebuilt packages and binaries can be used to get up and running fast with PHP.
 
-```sh
-cd dillinger
-npm i
-node app
-```
+For Windows, the PHP binaries can be obtained from
+[windows.php.net](https://windows.php.net). After extracting the archive the
+`*.exe` files are ready to use.
 
-For production environments...
+For other systems, see the [installation chapter](https://php.net/install).
 
-```sh
-npm install --production
-NODE_ENV=production node app
-```
+### Building PHP source code
 
-## Plugins
+*For Windows, see [Build your own PHP on Windows](https://wiki.php.net/internals/windows/stepbystepbuild_sdk_2).*
 
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
+For a minimal PHP build from Git, you will need autoconf, bison, and re2c. For
+a default build, you will additionally need libxml2 and libsqlite3.
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
+On Ubuntu, you can install these using:
 
-## Development
+    sudo apt install -y pkg-config build-essential autoconf bison re2c \
+                        libxml2-dev libsqlite3-dev
 
-Want to contribute? Great!
+On Fedora, you can install these using:
 
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
+    sudo dnf install re2c bison autoconf make libtool ccache libxml2-devel sqlite-devel
 
-Open your favorite Terminal and run these commands.
+Generate configure:
 
-First Tab:
+    ./buildconf
 
-```sh
-node app
-```
+Configure your build. `--enable-debug` is recommended for development, see
+`./configure --help` for a full list of options.
 
-Second Tab:
+    # For development
+    ./configure --enable-debug
+    # For production
+    ./configure
 
-```sh
-gulp watch
-```
+Build PHP. To speed up the build, specify the maximum number of jobs using `-j`:
 
-(optional) Third:
+    make -j4
 
-```sh
-karma test
-```
+The number of jobs should usually match the number of available cores, which
+can be determined using `nproc`.
 
-#### Building for source
+## Testing PHP source code
 
-For production release:
+PHP ships with an extensive test suite, the command `make test` is used after
+successful compilation of the sources to run this test suite.
 
-```sh
-gulp build --prod
-```
+It is possible to run tests using multiple cores by setting `-jN` in
+`TEST_PHP_ARGS`:
 
-Generating pre-built zip archives for distribution:
+    make TEST_PHP_ARGS=-j4 test
 
-```sh
-gulp build dist --prod
-```
+Shall run `make test` with a maximum of 4 concurrent jobs: Generally the maximum
+number of jobs should not exceed the number of cores available.
 
-## Docker
+The [qa.php.net](https://qa.php.net) site provides more detailed info about
+testing and quality assurance.
 
-Dillinger is very easy to install and deploy in a Docker container.
+## Installing PHP built from source
 
-By default, the Docker will expose port 8080, so change this within the
-Dockerfile if necessary. When ready, simply use the Dockerfile to
-build the image.
+After a successful build (and test), PHP may be installed with:
 
-```sh
-cd dillinger
-docker build -t <youruser>/dillinger:${package.json.version} .
-```
+    make install
 
-This will create the dillinger image and pull in the necessary dependencies.
-Be sure to swap out `${package.json.version}` with the actual
-version of Dillinger.
+Depending on your permissions and prefix, `make install` may need super user
+permissions.
 
-Once done, run the Docker image and map the port to whatever you wish on
-your host. In this example, we simply map port 8000 of the host to
-port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
+## PHP extensions
 
-```sh
-docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger <youruser>/dillinger:${package.json.version}
-```
+Extensions provide additional functionality on top of PHP. PHP consists of many
+essential bundled extensions. Additional extensions can be found in the PHP
+Extension Community Library - [PECL](https://pecl.php.net).
 
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
+## Contributing
 
-Verify the deployment by navigating to your server address in
-your preferred browser.
+The PHP source code is located in the Git repository at
+[github.com/php/php-src](https://github.com/php/php-src). Contributions are most
+welcome by forking the repository and sending a pull request.
 
-```sh
-127.0.0.1:8000
-```
+Discussions are done on GitHub, but depending on the topic can also be relayed
+to the official PHP developer mailing list internals@lists.php.net.
 
-## License
+New features require an RFC and must be accepted by the developers. See
+[Request for comments - RFC](https://wiki.php.net/rfc) and
+[Voting on PHP features](https://wiki.php.net/rfc/voting) for more information
+on the process.
 
-MIT
+Bug fixes don't require an RFC. If the bug has a GitHub issue, reference it in
+the commit message using `GH-NNNNNN`. Use `#NNNNNN` for tickets in the old
+[bugs.php.net](https://bugs.php.net) bug tracker.
 
-**Free Software, Hell Yeah!**
+    Fix GH-7815: php_uname doesn't recognise latest Windows versions
+    Fix #55371: get_magic_quotes_gpc() throws deprecation warning
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+See [Git workflow](https://wiki.php.net/vcs/gitworkflow) for details on how pull
+requests are merged.
 
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
+### Guidelines for contributors
 
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+See further documents in the repository for more information on how to
+contribute:
+
+- [Contributing to PHP](/CONTRIBUTING.md)
+- [PHP coding standards](/CODING_STANDARDS.md)
+- [Mailing list rules](/docs/mailinglist-rules.md)
+- [PHP release process](/docs/release-process.md)
+
+## Credits
+
+For the list of people who've put work into PHP, please see the
+[PHP credits page](https://php.net/credits.php).
