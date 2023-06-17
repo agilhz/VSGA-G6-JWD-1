@@ -22,7 +22,10 @@ Junior Web Developer merupakan salah satu Skema Pelatihan Program Vocational Sch
 
 ## Project List
 
-
+1. Folder Hari_1: coding perkenalan diri dengan menggunakan bahasa pemrograman PHP
+2. Folder Hari_2: membuat form sederhana
+3. Folder Hari_3: membuat UI form dengan menggunakan tools dari website grapedrop dan membuat single menu pilihan sederhana
+4. Folder Hari_4: Membuat file readme dan juga aplikasi kalkulator sederhana
 
 ## Folder Structure
 
