@@ -1,8 +1,13 @@
 # PHP Project for Digitalent VSGA Junior Web Developer Program
 
-Junior Web Developer merupakan salah satu Skema Pelatihan Program Vocational School Graduate Academy Digital Talent Scholarship 2023 yang berbasis Standar Kompetensi Kerja Nasional Indonesia (SKKNI) dengan skema Junior Web Developer. Peserta pelatihan Junior Web Developer akan mampu membangun dan mengelola aplikasi berbasis web dengan bahasa pemrograman. Di akhir pelatihan, peserta akan mengikuti uji kompetensi dan sertifikasi Junior Web Developer, bagi yang dinyatakan kompeten akan mendapatkan Sertifikat Kompetensi Junior Web Developer dari BNSP.
+Junior Web Developer merupakan salah satu Skema Pelatihan Program Vocational School Graduate Academy Digital Talent Scholarship 2023 yang berbasis Standar Kompetensi Kerja Nasional Indonesia (SKKNI) dengan skema Junior Web Developer. Repository ini menyimpan progres project yang sudah dikerjakan selama pelatihan menggunakan bahasa pemrograman PHP.
 
 [![Github All Releases](https://img.shields.io/github/downloads/agilhz/VSGA-G6-JWD-1/total.svg)]()
+
+## Requirements
+
+1. PHP 7.4
+2. Xampp v3.3.0
 
 ## Documentation
 
